@@ -13,4 +13,13 @@ Design-first replica of the [Gap iOS app](https://apps.apple.com/us/app/gap-appa
 
 ## App
 
-SwiftUI · iOS 17+ · Observation · MapKit · Kingfisher · XcodeGen. See `DEMO.md` (added with the app) for build/run instructions.
+SwiftUI · iOS 17+ · Observation · MapKit · Kingfisher · XcodeGen. See [`DEMO.md`](DEMO.md) for build/run
+instructions, launch arguments and the golden-path walkthrough.
+
+```bash
+brew install xcodegen && xcodegen generate
+xcodebuild test -project Gap.xcodeproj -scheme Gap -destination "platform=iOS Simulator,name=iPhone 17"
+```
+
+Every screen-level view conforms to `FigmaTraced` and carries its Figma node id (`Gap/Design/FigmaNode.swift`);
+launch with `-figmaOverlay` to see the node badge on device, or `-seedBag` to start with the fall outfit in the bag.

@@ -1,0 +1,222 @@
+{
+  "departments": [
+    {
+      "id": "women",
+      "name": "Women",
+      "symbol": "figure.stand.dress"
+    },
+    {
+      "id": "men",
+      "name": "Men",
+      "symbol": "figure.stand"
+    },
+    {
+      "id": "girls",
+      "name": "Girls",
+      "symbol": "figure.child"
+    },
+    {
+      "id": "boys",
+      "name": "Boys",
+      "symbol": "figure.child"
+    },
+    {
+      "id": "baby",
+      "name": "Baby & Toddler",
+      "symbol": "stroller"
+    }
+  ],
+  "categories": [
+    {
+      "id": "tees",
+      "department": "women",
+      "name": "Short Sleeve Tees",
+      "order": 1
+    },
+    {
+      "id": "jeans",
+      "department": "women",
+      "name": "Jeans",
+      "order": 2
+    },
+    {
+      "id": "dresses",
+      "department": "women",
+      "name": "Dresses",
+      "order": 3
+    },
+    {
+      "id": "sweaters",
+      "department": "women",
+      "name": "Sweaters",
+      "order": 4
+    },
+    {
+      "id": "sweatshirts",
+      "department": "women",
+      "name": "Sweatshirts & Hoodies",
+      "order": 5
+    },
+    {
+      "id": "shirts",
+      "department": "women",
+      "name": "Shirts & Blouses",
+      "order": 6
+    },
+    {
+      "id": "pants",
+      "department": "women",
+      "name": "Pants",
+      "order": 7
+    },
+    {
+      "id": "shorts",
+      "department": "women",
+      "name": "Shorts",
+      "order": 8
+    },
+    {
+      "id": "jackets",
+      "department": "women",
+      "name": "Jackets & Outerwear",
+      "order": 9
+    },
+    {
+      "id": "activewear",
+      "department": "women",
+      "name": "Activewear",
+      "order": 10
+    },
+    {
+      "id": "leggings",
+      "department": "women",
+      "name": "Leggings",
+      "order": 11
+    },
+    {
+      "id": "tees",
+      "department": "men",
+      "name": "T-Shirts",
+      "order": 1
+    },
+    {
+      "id": "jeans",
+      "department": "men",
+      "name": "Jeans",
+      "order": 2
+    },
+    {
+      "id": "shirts",
+      "department": "men",
+      "name": "Shirts",
+      "order": 3
+    },
+    {
+      "id": "sweatshirts",
+      "department": "men",
+      "name": "Sweatshirts & Hoodies",
+      "order": 4
+    },
+    {
+      "id": "pants",
+      "department": "men",
+      "name": "Pants & Joggers",
+      "order": 5
+    },
+    {
+      "id": "shorts",
+      "department": "men",
+      "name": "Shorts",
+      "order": 6
+    },
+    {
+      "id": "sweaters",
+      "department": "men",
+      "name": "Sweaters",
+      "order": 7
+    },
+    {
+      "id": "jackets",
+      "department": "men",
+      "name": "Jackets & Outerwear",
+      "order": 8
+    },
+    {
+      "id": "tees",
+      "department": "girls",
+      "name": "T-Shirts",
+      "order": 1
+    },
+    {
+      "id": "jeans",
+      "department": "girls",
+      "name": "Jeans",
+      "order": 2
+    },
+    {
+      "id": "dresses",
+      "department": "girls",
+      "name": "Dresses",
+      "order": 3
+    },
+    {
+      "id": "tees",
+      "department": "boys",
+      "name": "T-Shirts",
+      "order": 1
+    },
+    {
+      "id": "jeans",
+      "department": "boys",
+      "name": "Jeans",
+      "order": 2
+    },
+    {
+      "id": "sweatshirts",
+      "department": "boys",
+      "name": "Sweatshirts & Hoodies",
+      "order": 3
+    },
+    {
+      "id": "bodysuits",
+      "department": "baby",
+      "name": "Bodysuits",
+      "order": 1
+    },
+    {
+      "id": "one-pieces",
+      "department": "baby",
+      "name": "One-Pieces & Sleepwear",
+      "order": 2
+    },
+    {
+      "id": "sets",
+      "department": "baby",
+      "name": "Sets & Outfits",
+      "order": 3
+    }
+  ],
+  "collections": [
+    {
+      "id": "fall-edit",
+      "name": "Fall Edit",
+      "eyebrow": "New season",
+      "title": "Fall Layers",
+      "subtitle": "Layer up for the season",
+      "productIDs": [
+        "gap-800546",
+        "gap-815642",
+        "gap-797118",
+        "gap-828764",
+        "gap-863808",
+        "gap-911371",
+        "gap-895165",
+        "gap-485013",
+        "gap-897176",
+        "gap-908889",
+        "gap-1184982",
+        "gap-911359"
+      ]
+    }
+  ]
+}
