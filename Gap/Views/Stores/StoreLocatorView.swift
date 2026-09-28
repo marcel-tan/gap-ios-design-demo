@@ -4,8 +4,13 @@ import MapKit
 struct StoreLocatorView: View, FigmaTraced {
     static let figmaNode = FigmaScreens.storeLocator
 
+    /// True when pushed from Checkout: tapping a row picks it as the pickup store and pops back.
+    var picksPickupStore = false
+
     @Environment(StoreLocator.self) private var locator
     @Environment(AppState.self) private var appState
+    @Environment(CartStore.self) private var cart
+    @Environment(\.dismiss) private var dismiss
     @State private var brands: Set<Brand> = []
     @State private var selectedStoreID: String?
     @State private var camera: MapCameraPosition = .region(
@@ -57,6 +62,12 @@ struct StoreLocatorView: View, FigmaTraced {
                             }
                             .id(store.id)
                             .onTapGesture {
+                                if picksPickupStore {
+                                    cart.pickupStoreID = store.id
+                                    appState.showToast("Picking up at \(store.name)")
+                                    dismiss()
+                                    return
+                                }
                                 selectedStoreID = store.id
                                 withAnimation { camera = .region(MKCoordinateRegion(center: store.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))) }
                             }
@@ -72,7 +83,10 @@ struct StoreLocatorView: View, FigmaTraced {
             }
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
-        .navigationTitle("Store Locator")
+        .navigationTitle(picksPickupStore ? "Choose a pickup store" : "Store Locator")
+        .onAppear {
+            if picksPickupStore { brands = Set(cart.lines.map(\.product.brandInfo)) }
+        }
         .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .figmaNode(Self.figmaNode)

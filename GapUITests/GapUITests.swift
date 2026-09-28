@@ -191,7 +191,10 @@ final class GapUITests: XCTestCase {
         wait(app.buttons["header-search"])
         app.buttons["header-search"].tap()
         wait(app.textFields["search-field"])
-        app.textFields["search-field"].typeText("jeans\n")
+        app.textFields["search-field"].typeText("jeans")
+        wait(app.staticTexts["plp-count"])
+        XCTAssertFalse(app.buttons["search-trending-hoodie"].exists, "results replace suggestions before the keyboard search is pressed")
+        app.textFields["search-field"].typeText("\n")
         wait(app.staticTexts["plp-count"])
         XCTAssertTrue(app.staticTexts["plp-count"].label.hasSuffix("items"))
         openFirstPDP()
@@ -258,6 +261,29 @@ final class GapUITests: XCTestCase {
         wait(setPreferred)
         setPreferred.tap()
         XCTAssertTrue(app.staticTexts["My Store"].waitForExistence(timeout: 3))
+    }
+
+    func testCheckoutChangeStorePicksThePickupStore() {
+        app.launchArguments = ["-uiTesting", "-skipOnboarding", "-resetState", "-seedBag"]
+        app.launch()
+        wait(app.buttons["tab-bag"])
+        app.buttons["tab-bag"].tap()
+        wait(app.buttons["bag-checkout"])
+        app.buttons["bag-checkout"].tap()
+        wait(app.element("checkout"))
+        XCTAssertEqual(app.staticTexts["checkout-pickup-store"].label, "Gap Sainte-Catherine")
+
+        let changeStore = app.buttons["checkout-change-store"]
+        scrollTo(changeStore, in: app.scrollViews.firstMatch)
+        changeStore.tap()
+        wait(app.element("store-locator"))
+        XCTAssertEqual(app.staticTexts["store-count"].label, "3 stores near Montréal, QC", "only stores of brands in the bag are offered")
+        let laval = app.element("store-row-gap-carrefour-laval")
+        wait(laval)
+        laval.tap()
+
+        wait(app.element("checkout"))
+        XCTAssertEqual(app.staticTexts["checkout-pickup-store"].label, "Gap Carrefour Laval")
     }
 
     // MARK: - Golden path (PRD §5): fall outfit → FALL25 → pickup at Gap Sainte-Catherine → confirmation → history

@@ -51,7 +51,7 @@ struct ShopView: View, FigmaTraced {
                         router.push(.listing(.all(brand: brand)), on: .shop)
                     }
                     row(title: "Find a Store", symbol: "mappin.and.ellipse", identifier: "shop-stores") {
-                        router.push(.storeLocator, on: .shop)
+                        router.push(.storeLocator(), on: .shop)
                     }
                     TabBarSpacer()
                 }

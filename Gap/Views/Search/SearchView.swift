@@ -29,6 +29,7 @@ struct SearchView: View, FigmaTraced {
             .toolbar(.hidden, for: .navigationBar)
         }
         .onAppear { focused = true }
+        .onChange(of: query) { _, text in submitted = text.trimmingCharacters(in: .whitespacesAndNewlines) }
         .accessibilityElement(children: .contain)
         .figmaNode(Self.figmaNode)
         .accessibilityIdentifier("search")
@@ -120,7 +121,6 @@ struct SearchView: View, FigmaTraced {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !q.isEmpty else { return }
         appState.recordSearch(q)
-        submitted = q
         focused = false
     }
 }

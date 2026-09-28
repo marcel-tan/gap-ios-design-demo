@@ -152,13 +152,16 @@ final class CartStore {
     static let promoKey = "bag.promo"
     static let ordersKey = "bag.orders"
     static let pickupKey = "bag.pickup"
-    static let persistedKeys = [linesKey, promoKey, ordersKey, pickupKey]
+    static let pickupStoreKey = "bag.pickupStore"
+    static let persistedKeys = [linesKey, promoKey, ordersKey, pickupKey, pickupStoreKey]
 
     private(set) var lines: [CartLine] = [] { didSet { persist(lines, key: CartStore.linesKey) } }
     private(set) var orders: [Order] = [] { didSet { persist(orders, key: CartStore.ordersKey) } }
     private(set) var promo: PromoCode? { didSet { persist(promo, key: CartStore.promoKey) } }
     /// Checkout defaults to in-store pickup (the golden path); toggled from Checkout.
     var prefersPickup = false { didSet { defaults?.set(prefersPickup, forKey: CartStore.pickupKey) } }
+    /// Store chosen from Checkout's "Change store"; falls back to My Store when nil or not eligible.
+    var pickupStoreID: String? { didSet { defaults?.set(pickupStoreID, forKey: CartStore.pickupStoreKey) } }
 
     private let defaults: UserDefaults?
 
@@ -170,6 +173,7 @@ final class CartStore {
         orders = CartStore.decode([Order].self, from: defaults, key: CartStore.ordersKey) ?? []
         promo = CartStore.decode(PromoCode.self, from: defaults, key: CartStore.promoKey)
         prefersPickup = defaults.object(forKey: CartStore.pickupKey) == nil ? true : defaults.bool(forKey: CartStore.pickupKey)
+        pickupStoreID = defaults.string(forKey: CartStore.pickupStoreKey)
     }
 
     var isEmpty: Bool { lines.isEmpty }

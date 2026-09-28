@@ -9,7 +9,7 @@ enum Route: Hashable {
     case confirmation(Order)
     case purchaseHistory
     case orderDetail(Order)
-    case storeLocator
+    case storeLocator(picksPickupStore: Bool = false)
     case encoreMarket
     case encoreOffers
     case profile
@@ -165,7 +165,7 @@ struct RouteView: View {
         case .confirmation(let order): OrderConfirmationView(order: order)
         case .purchaseHistory: PurchaseHistoryView()
         case .orderDetail(let order): OrderDetailView(order: order)
-        case .storeLocator: StoreLocatorView()
+        case .storeLocator(let picksPickupStore): StoreLocatorView(picksPickupStore: picksPickupStore)
         case .encoreMarket: EncoreMarketView()
         case .encoreOffers: EncoreOffersView()
         case .profile: ProfileView()

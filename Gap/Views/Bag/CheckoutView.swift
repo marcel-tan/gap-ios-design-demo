@@ -23,6 +23,7 @@ struct CheckoutView: View, FigmaTraced {
     /// Only a store of a brand present in the bag can fulfil a pickup order.
     private var pickupStore: Store? {
         let eligible = stores.stores(for: Set(cart.lines.map(\.product.brandInfo)))
+        if let chosen = eligible.first(where: { $0.id == cart.pickupStoreID }) { return chosen }
         if let preferred = stores.preferredStore, eligible.contains(preferred) { return preferred }
         return eligible.first { $0.brandInfo == appState.selectedBrand } ?? eligible.first
     }
@@ -107,7 +108,7 @@ struct CheckoutView: View, FigmaTraced {
                         }
                     }
                 }
-                Button("Change store") { router.push(.storeLocator, on: appState.selectedTab) }
+                Button("Change store") { router.push(.storeLocator(picksPickupStore: true), on: appState.selectedTab) }
                     .font(Theme.Typography.small).foregroundStyle(Theme.Colors.navy)
                     .accessibilityIdentifier("checkout-change-store")
             }

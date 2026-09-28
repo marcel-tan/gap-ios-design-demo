@@ -230,7 +230,7 @@ struct ProductDetailView: View, FigmaTraced {
     /// Figma: S06 › store availability row ("In stock at Gap Sainte-Catherine · pick up today").
     private var pickupAvailability: some View {
         let store = stores.preferredStore ?? stores.stores.first { $0.brandInfo == product.brandInfo } ?? stores.stores.first
-        return Button { router.push(.storeLocator, on: appState.selectedTab) } label: {
+        return Button { router.push(.storeLocator(), on: appState.selectedTab) } label: {
             HStack(spacing: 8) {
                 Image(systemName: "mappin.circle.fill").foregroundStyle(Theme.Colors.success)
                 if let store {

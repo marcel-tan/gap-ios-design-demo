@@ -101,7 +101,7 @@ struct AccountView: View, FigmaTraced {
     private var menu: some View {
         VStack(spacing: 0) {
             menuRow("My Store", detail: stores.preferredStore?.name ?? "Choose a store", symbol: "mappin.and.ellipse", id: "account-my-store") {
-                router.push(.storeLocator, on: .account)
+                router.push(.storeLocator(), on: .account)
             }
             menuRow("Profile & Addresses", detail: account.shippingAddress, symbol: "person", id: "account-profile") {
                 router.push(.profile, on: .account)

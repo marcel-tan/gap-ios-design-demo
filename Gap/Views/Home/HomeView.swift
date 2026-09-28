@@ -196,7 +196,7 @@ struct HomeView: View, FigmaTraced {
     }
 
     private var storeCard: some View {
-        Button { open(.storeLocator) } label: {
+        Button { open(.storeLocator()) } label: {
             HStack(spacing: 12) {
                 Image(systemName: "mappin.and.ellipse").font(.system(size: 22)).foregroundStyle(Theme.Colors.navy)
                 VStack(alignment: .leading, spacing: 2) {

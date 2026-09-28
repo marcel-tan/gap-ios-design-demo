@@ -201,9 +201,11 @@ final class CartStoreTests: XCTestCase {
         fallOutfit.forEach { cart.add($0, size: "M") }
         cart.applyPromo("FALL25")
         cart.prefersPickup = false
+        cart.pickupStoreID = "gap-carrefour-laval"
 
         let restored = CartStore(defaults: defaults)
         XCTAssertEqual(restored.lines, cart.lines)
+        XCTAssertEqual(restored.pickupStoreID, "gap-carrefour-laval")
         XCTAssertEqual(restored.promo?.code, "FALL25")
         XCTAssertFalse(restored.prefersPickup)
         XCTAssertEqual(restored.total, cart.total)
