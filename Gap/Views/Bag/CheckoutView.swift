@@ -62,8 +62,8 @@ struct CheckoutView: View, FigmaTraced {
             appState.detailDepth = max(0, appState.detailDepth - 1)
             if appState.detailDepth == 0 { appState.detailScrolled = false }
         }
-        .figmaNode(Self.figmaNode)
         .accessibilityElement(children: .contain)
+        .figmaNode(Self.figmaNode)
         .accessibilityIdentifier("checkout")
     }
 
@@ -288,8 +288,8 @@ struct OrderConfirmationView: View, FigmaTraced {
         .navigationTitle("Order Confirmed")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden()
-        .figmaNode(Self.figmaNode)
         .accessibilityElement(children: .contain)
+        .figmaNode(Self.figmaNode)
         .accessibilityIdentifier("confirmation")
     }
 }

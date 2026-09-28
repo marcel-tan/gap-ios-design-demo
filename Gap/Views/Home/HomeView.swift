@@ -44,8 +44,8 @@ struct HomeView: View, FigmaTraced {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
-        .figmaNode(Self.figmaNode)
         .accessibilityElement(children: .contain)
+        .figmaNode(Self.figmaNode)
         .accessibilityIdentifier("home")
     }
 
@@ -258,8 +258,8 @@ struct BrandSwitcherView: View, FigmaTraced {
             Spacer()
         }
         .background(Theme.Colors.surface)
-        .figmaNode(Self.figmaNode)
         .accessibilityElement(children: .contain)
+        .figmaNode(Self.figmaNode)
         .accessibilityIdentifier("brand-switcher-sheet")
     }
 }
