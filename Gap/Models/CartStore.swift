@@ -158,7 +158,7 @@ final class CartStore {
     private(set) var orders: [Order] = [] { didSet { persist(orders, key: CartStore.ordersKey) } }
     private(set) var promo: PromoCode? { didSet { persist(promo, key: CartStore.promoKey) } }
     /// Checkout defaults to in-store pickup (the golden path); toggled from Checkout.
-    var prefersPickup = false { didSet { defaults.set(prefersPickup, forKey: CartStore.pickupKey) } }
+    var prefersPickup = false { didSet { defaults?.set(prefersPickup, forKey: CartStore.pickupKey) } }
 
     private let defaults: UserDefaults?
 
