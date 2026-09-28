@@ -69,6 +69,7 @@ final class ProductFilterTests: XCTestCase {
         XCTAssertEqual(ProductFilter.colorFamily("Heather Grey"), "Grey")
         XCTAssertEqual(ProductFilter.colorFamily("Optic White"), "White")
         XCTAssertEqual(ProductFilter.colorFamily("Khaki"), "Beige")
+        XCTAssertEqual(ProductFilter.colorFamily("Noir Red"), "Red")
         XCTAssertEqual(ProductFilter.colorFamily("Rainbow Stripe"), "Multi")
         XCTAssertEqual(ProductFilter.colorOptions(products), ["Black", "White", "Blue", "Grey"])
         XCTAssertEqual(ProductFilter.sizeOptions(products), ["M", "S"])

@@ -72,7 +72,7 @@ struct ProductFilter: Hashable {
     static func colorFamily(_ name: String) -> String {
         let n = name.lowercased()
         let table: [(String, String)] = [
-            ("black", "Black"), ("noir", "Black"), ("night", "Black"),
+            ("black", "Black"), ("night", "Black"),
             ("white", "White"), ("ivory", "White"), ("cream", "White"), ("ecru", "White"), ("frost", "White"),
             ("wash", "Blue"), ("indigo", "Blue"), ("rinse", "Blue"), ("denim", "Blue"), ("blue", "Blue"), ("navy", "Blue"),
             ("grey", "Grey"), ("gray", "Grey"), ("charcoal", "Grey"), ("heather", "Grey"),
