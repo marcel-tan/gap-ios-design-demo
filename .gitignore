@@ -1,0 +1,16 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+.DS_Store
+# SwiftPM
+.build/
+.swiftpm/
+Package.resolved
+# XcodeGen output is committed; regenerate with `xcodegen generate`
