@@ -285,3 +285,12 @@ struct Wordmark: View {
         .accessibilityIdentifier("wordmark")
     }
 }
+
+extension View {
+    /// Inline title on an opaque surface bar so scrolled content never shows through the toolbar.
+    func inlineNavigationBar() -> some View {
+        navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Theme.Colors.surface, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+    }
+}

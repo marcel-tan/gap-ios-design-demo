@@ -20,7 +20,7 @@ struct ProductListView: View, FigmaTraced {
         content
             .background(Theme.Colors.surface.ignoresSafeArea())
             .navigationTitle(embedded ? "" : catalog.title(for: scope))
-            .navigationBarTitleDisplayMode(.inline)
+            .inlineNavigationBar()
             .toolbar {
                 if !embedded {
                     ToolbarItem(placement: .topBarTrailing) {
@@ -195,7 +195,7 @@ struct FilterSheet: View {
                 .background(Theme.Colors.surface)
             }
             .navigationTitle("Filter & Sort")
-            .navigationBarTitleDisplayMode(.inline)
+            .inlineNavigationBar()
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") { dismiss() }

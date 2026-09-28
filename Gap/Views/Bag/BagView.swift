@@ -34,7 +34,7 @@ struct BagView: View, FigmaTraced {
                         .padding(.horizontal, Theme.Spacing.screenMargin)
                         .accessibilityIdentifier("bag-checkout")
                         ProductRail(title: "You may also like",
-                                    products: cart.lines.first.map { catalog.related(to: $0.product) } ?? []) { product in
+                                    products: cart.lines.first.map { catalog.related(to: $0.product).filter { !cart.contains($0) } } ?? []) { product in
                             router.push(.product(product, nil), on: .bag)
                         }
                         TabBarSpacer()

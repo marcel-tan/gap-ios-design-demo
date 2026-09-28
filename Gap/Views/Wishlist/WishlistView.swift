@@ -37,7 +37,7 @@ private struct WishlistContent: View {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Wishlist (\(wishlist.count))")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Close") { dismiss() }.accessibilityIdentifier("wishlist-close")

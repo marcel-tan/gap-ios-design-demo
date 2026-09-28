@@ -174,6 +174,7 @@ final class CartStore {
 
     var isEmpty: Bool { lines.isEmpty }
     var itemCount: Int { lines.reduce(0) { $0 + $1.quantity } }
+    func contains(_ product: Product) -> Bool { lines.contains { $0.product.id == product.id } }
     var summary: CheckoutSummary { CheckoutSummary(lines: lines, promo: promo, isPickup: prefersPickup) }
     var subtotal: Decimal { summary.subtotal }
     var total: Decimal { summary.total }

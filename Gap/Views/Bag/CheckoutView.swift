@@ -56,7 +56,7 @@ struct CheckoutView: View, FigmaTraced {
             .background(Theme.Colors.surface.shadow(color: Theme.Colors.shadow, radius: 10, y: -4))
         }
         .navigationTitle("Checkout")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .onAppear { appState.detailDepth += 1; appState.detailScrolled = true }
         .onDisappear {
             appState.detailDepth = max(0, appState.detailDepth - 1)
@@ -286,7 +286,7 @@ struct OrderConfirmationView: View, FigmaTraced {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Order Confirmed")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .navigationBarBackButtonHidden()
         .accessibilityElement(children: .contain)
         .figmaNode(Self.figmaNode)

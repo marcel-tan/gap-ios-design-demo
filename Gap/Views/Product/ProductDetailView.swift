@@ -52,7 +52,7 @@ struct ProductDetailView: View, FigmaTraced {
             if appState.detailScrolled != scrolled { appState.detailScrolled = scrolled }
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Text(product.brandInfo.displayName.uppercased()).trackedLabel().foregroundStyle(Theme.Colors.textSecondary)
@@ -365,7 +365,7 @@ struct AddedToBagSheet: View, FigmaTraced {
                     OutlineButton(title: "Continue Shopping") { dismiss() }
                         .accessibilityIdentifier("added-continue")
                 }
-                let related = catalog.related(to: item.product, limit: 6)
+                let related = catalog.related(to: item.product, limit: 8).filter { !cart.contains($0) }
                 if !related.isEmpty {
                     ProductRail(title: "Complete the look", products: related) { product in
                         appState.addedToBag = nil

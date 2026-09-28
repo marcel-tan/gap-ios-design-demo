@@ -191,7 +191,7 @@ struct PurchaseHistoryView: View {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Purchase History")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("purchase-history")
     }
@@ -225,7 +225,7 @@ struct OrderDetailView: View {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Order Details")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("order-detail")
     }
@@ -247,7 +247,7 @@ struct EncoreOffersView: View {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Encore Offers")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("encore-offers")
     }
@@ -310,7 +310,7 @@ struct EncoreMarketView: View {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Encore Market")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("encore-market")
     }
@@ -334,7 +334,7 @@ struct ProfileView: View {
             }
         }
         .navigationTitle("Profile")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("profile")
     }

@@ -73,7 +73,7 @@ struct StoreLocatorView: View, FigmaTraced {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle("Store Locator")
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .accessibilityElement(children: .contain)
         .figmaNode(Self.figmaNode)
         .accessibilityIdentifier("store-locator")

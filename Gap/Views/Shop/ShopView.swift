@@ -168,7 +168,7 @@ struct DepartmentView: View {
         }
         .background(Theme.Colors.surface.ignoresSafeArea())
         .navigationTitle(department?.name ?? departmentID.capitalized)
-        .navigationBarTitleDisplayMode(.inline)
+        .inlineNavigationBar()
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button { appState.isSearchPresented = true } label: { Image(systemName: "magnifyingglass") }
