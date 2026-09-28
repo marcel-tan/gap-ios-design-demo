@@ -20,7 +20,12 @@ struct CheckoutView: View, FigmaTraced {
     @State private var isPlacing = false
 
     private var delivery: Delivery { cart.prefersPickup ? .pickup : .ship }
-    private var pickupStore: Store? { stores.preferredStore ?? stores.stores.first { $0.brandInfo == appState.selectedBrand } ?? stores.stores.first }
+    /// Only a store of a brand present in the bag can fulfil a pickup order.
+    private var pickupStore: Store? {
+        let eligible = stores.stores(for: Set(cart.lines.map(\.product.brandInfo)))
+        if let preferred = stores.preferredStore, eligible.contains(preferred) { return preferred }
+        return eligible.first { $0.brandInfo == appState.selectedBrand } ?? eligible.first
+    }
 
     var body: some View {
         ScrollView {
@@ -35,6 +40,8 @@ struct CheckoutView: View, FigmaTraced {
             }
             .padding(Theme.Spacing.screenMargin)
         }
+        .disabled(isPlacing)
+        .navigationBarBackButtonHidden(isPlacing)
         .background(Theme.Colors.surface.ignoresSafeArea())
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 8) {
@@ -163,9 +170,11 @@ struct CheckoutView: View, FigmaTraced {
         } else {
             fulfillment = .ship(address: account.shippingAddress)
         }
+        let reviewedTotal = cart.total
         Task {
             try? await Task.sleep(for: .milliseconds(ProcessInfo.processInfo.arguments.contains("-uiTesting") ? 50 : 700))
-            guard let order = cart.checkout(shippingName: account.fullName, fulfillment: fulfillment) else {
+            guard cart.total == reviewedTotal,
+                  let order = cart.checkout(shippingName: account.fullName, fulfillment: fulfillment) else {
                 isPlacing = false
                 return
             }

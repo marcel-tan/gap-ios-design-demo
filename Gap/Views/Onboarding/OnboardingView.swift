@@ -16,13 +16,13 @@ struct OnboardingView: View, FigmaTraced {
     private let pages = [
         Page(title: "Shop Gap, Athleta, Old Navy & Banana Republic in one place.",
              body: "Switch brands from the top of the app and keep one bag across all four.",
-             productID: "815642"),
+             productID: "gap-815642"),
         Page(title: "Earn Encore points on every order.",
              body: "1 point per dollar. Premier members get free shipping and early access to drops.",
-             productID: "795346"),
+             productID: "gap-795346"),
         Page(title: "Find your store in Montréal.",
              body: "Buy online, pick up in store, and see what's on the rack before you go.",
-             productID: "886601"),
+             productID: "gap-886601"),
     ]
 
     var body: some View {

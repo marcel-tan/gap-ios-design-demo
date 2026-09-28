@@ -7,14 +7,15 @@ Deployment target is iOS 17, so any iOS 17+ iPhone simulator works — swap the 
 
 ```bash
 git clone <this repo> && cd gap-ios-design-demo
+brew install xcodegen && xcodegen generate
 xcodebuild build \
   -project Gap.xcodeproj -scheme Gap \
   -destination "platform=iOS Simulator,name=iPhone 17" \
   -derivedDataPath build/DerivedData
 ```
 
-`Gap.xcodeproj` is checked in, so XcodeGen is **not** required. If you edit `project.yml`,
-regenerate with `brew install xcodegen && xcodegen generate`. The only third-party dependency
+`Gap.xcodeproj` is generated from `project.yml` and not checked in: run
+`brew install xcodegen && xcodegen generate` once after cloning (and after editing `project.yml`). The only third-party dependency
 (Kingfisher, async image loading + cache) is resolved by SwiftPM on first build.
 
 If `xcodebuild` cannot find the runtime for a device that `xcrun simctl list devices available`

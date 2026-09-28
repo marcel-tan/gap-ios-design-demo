@@ -235,7 +235,7 @@ final class CartStore {
     @discardableResult
     func checkout(shippingName: String, fulfillment: Fulfillment, now: Date = Date()) -> Order? {
         guard !lines.isEmpty else { return nil }
-        let number = String(format: "GP%08d", Int(now.timeIntervalSince1970) % 100_000_000)
+        let number = String(format: "GP%08d", (Int(now.timeIntervalSince1970) % 10_000_000) * 10 + orders.count % 10)
         let order = Order(
             id: UUID().uuidString,
             number: number,

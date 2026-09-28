@@ -68,13 +68,16 @@ struct BagView: View, FigmaTraced {
     }
 
     private var shippingProgress: some View {
-        let remaining = CheckoutSummary.freeShippingThreshold - cart.summary.discountedSubtotal
-        let progress = min(1, NSDecimalNumber(decimal: cart.summary.discountedSubtotal / CheckoutSummary.freeShippingThreshold).doubleValue)
+        let unlocked = cart.summary.shipping == 0
+        let remaining = max(0, CheckoutSummary.freeShippingThreshold - cart.summary.subtotal)
+        let progress = unlocked ? 1 : min(1, NSDecimalNumber(decimal: cart.summary.subtotal / CheckoutSummary.freeShippingThreshold).doubleValue)
         return VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 6) {
-                Image(systemName: remaining <= 0 ? "checkmark.circle.fill" : "shippingbox")
+                Image(systemName: unlocked ? "checkmark.circle.fill" : "shippingbox")
                     .foregroundStyle(Theme.Colors.success)
-                Text(remaining <= 0 ? "You've unlocked free shipping" : "Add \(PriceFormatter.string(remaining)) for free shipping")
+                Text(unlocked
+                     ? (cart.prefersPickup ? "Free in-store pickup" : "You've unlocked free shipping")
+                     : "Add \(PriceFormatter.string(remaining)) for free shipping")
                     .font(Theme.Typography.small)
             }
             ProgressView(value: progress).tint(Theme.Colors.success)

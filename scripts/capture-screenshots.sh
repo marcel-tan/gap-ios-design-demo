@@ -7,6 +7,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
+mkdir -p build
 OUT="$(mkdir -p "${1:-docs/screenshots}" && cd "${1:-docs/screenshots}" && pwd)"
 
 if [ -n "${SIM_UDID:-}" ]; then
@@ -21,6 +22,8 @@ TEST_RUNNER_SCREENSHOT_DIR="$OUT" xcodebuild test \
   -destination "$DEST" \
   -derivedDataPath build/DerivedData \
   -only-testing:GapUITests/ScreenshotTourTests \
-  2>&1 | grep -E "error:|failed|Executed|\*\* TEST" || true
+  2>&1 | tee build/screenshots.log | grep -E "error:|failed|Executed|\*\* TEST" || true
+STATUS=${PIPESTATUS[0]}
 
 ls -1 "$OUT"/*.png
+exit "$STATUS"

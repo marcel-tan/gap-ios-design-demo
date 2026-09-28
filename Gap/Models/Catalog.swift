@@ -149,7 +149,13 @@ final class Catalog {
         let sameDepartment = products.filter {
             $0.id != product.id && $0.brand == product.brand && $0.department == product.department && $0.category != product.category
         }
-        return Array((sameCategory + sameDepartment).prefix(limit))
+        let companions = collections
+            .filter { $0.productIDs.contains(product.id) }
+            .flatMap { products(in: $0) }
+            .filter { $0.id != product.id }
+        var seen = Set<String>()
+        let ordered = (companions + sameCategory + sameDepartment).filter { seen.insert($0.id).inserted }
+        return Array(ordered.prefix(limit))
     }
 
     /// Products for a Home rail: `department` optional, biased towards new arrivals.
