@@ -134,6 +134,7 @@ struct HomeView: View, FigmaTraced {
             }
             .frame(height: 380)
             .clipped()
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .padding(.horizontal, Theme.Spacing.screenMargin)
@@ -156,6 +157,7 @@ struct HomeView: View, FigmaTraced {
             }
             .frame(height: 380)
             .clipped()
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .padding(.horizontal, Theme.Spacing.screenMargin)

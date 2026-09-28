@@ -68,21 +68,21 @@ enum FigmaComponents {
 /// and always exposes it to accessibility so XCUITests can assert screen ↔ design traceability.
 struct FigmaOverlay: ViewModifier {
     let node: FigmaNode
+    @Environment(\.openURL) private var openURL
     private var isEnabled: Bool { ProcessInfo.processInfo.arguments.contains("-figmaOverlay") }
 
     func body(content: Content) -> some View {
         content
             .overlay(alignment: .topTrailing) {
                 if isEnabled {
-                    Link(destination: node.url) {
-                        Text(node.id)
-                            .font(Theme.Typography.badge.monospaced())
-                            .padding(.horizontal, 6).padding(.vertical, 3)
-                            .background(Theme.Colors.encoreDark.opacity(0.85), in: Capsule())
-                            .foregroundStyle(.white)
-                    }
-                    .padding(.top, 54).padding(.trailing, 8)
-                    .allowsHitTesting(true)
+                    Text(node.id)
+                        .font(Theme.Typography.badge.monospaced())
+                        .padding(.horizontal, 6).padding(.vertical, 3)
+                        .background(Theme.Colors.encoreDark.opacity(0.85), in: Capsule())
+                        .foregroundStyle(.white)
+                        .onTapGesture { openURL(node.url) }
+                        .padding(.top, 54).padding(.trailing, 8)
+                        .accessibilityIdentifier("figma-badge")
                 }
             }
             .accessibilityValue("figma:\(node.id)")

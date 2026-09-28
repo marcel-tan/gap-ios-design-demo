@@ -27,6 +27,7 @@ struct RemoteImage: View {
                         .aspectRatio(contentMode: contentMode)
                         .frame(width: proxy.size.width, height: proxy.size.height)
                         .clipped()
+                        .contentShape(Rectangle())
                 }
             }
         }

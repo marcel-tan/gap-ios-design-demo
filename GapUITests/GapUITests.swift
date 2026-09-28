@@ -304,7 +304,7 @@ final class GapUITests: XCTestCase {
         wait(field)
         field.tap()
         field.typeText("Icon Denim Jacket\n")
-        let jacket = app.element("product-card-gap-797118")
+        let jacket = app.descendants(matching: .any).matching(NSPredicate(format: "identifier BEGINSWITH 'product-card-gap-797118'")).firstMatch
         wait(jacket)
         jacket.tap()
         wait(app.element("pdp-gap-797118"))
