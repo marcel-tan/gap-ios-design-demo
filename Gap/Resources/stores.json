@@ -1,0 +1,108 @@
+{
+  "stores": [
+    {
+      "id": "gap-ste-catherine",
+      "brand": "gap",
+      "name": "Gap Sainte-Catherine",
+      "address": "1255 Rue Sainte-Catherine O",
+      "city": "Montréal, QC H3G 1P7",
+      "phone": "(514) 866-0670",
+      "latitude": 45.4995,
+      "longitude": -73.5735,
+      "hours": "Mon–Sat 10am–9pm · Sun 11am–6pm",
+      "services": ["Buy Online, Pick Up In Store", "Free Returns", "GapKids & babyGap"],
+      "distanceKm": 0.8
+    },
+    {
+      "id": "gap-carrefour-laval",
+      "brand": "gap",
+      "name": "Gap Carrefour Laval",
+      "address": "3003 Boul le Carrefour",
+      "city": "Laval, QC H7T 1C7",
+      "phone": "(450) 686-0855",
+      "latitude": 45.5673,
+      "longitude": -73.7518,
+      "hours": "Mon–Fri 10am–9pm · Sat 9am–5pm · Sun 10am–5pm",
+      "services": ["Buy Online, Pick Up In Store", "Free Returns"],
+      "distanceKm": 16.2
+    },
+    {
+      "id": "gap-fairview",
+      "brand": "gap",
+      "name": "Gap Fairview Pointe-Claire",
+      "address": "6801 Route Transcanadienne",
+      "city": "Pointe-Claire, QC H9R 5J2",
+      "phone": "(514) 695-5540",
+      "latitude": 45.4757,
+      "longitude": -73.8274,
+      "hours": "Mon–Fri 10am–9pm · Sat 9am–5pm · Sun 10am–5pm",
+      "services": ["Buy Online, Pick Up In Store", "GapKids & babyGap"],
+      "distanceKm": 20.4
+    },
+    {
+      "id": "on-marche-central",
+      "brand": "oldnavy",
+      "name": "Old Navy Marché Central",
+      "address": "8745 Boul de l'Acadie",
+      "city": "Montréal, QC H4N 3C5",
+      "phone": "(514) 385-2210",
+      "latitude": 45.5333,
+      "longitude": -73.6570,
+      "hours": "Mon–Fri 10am–9pm · Sat–Sun 10am–5pm",
+      "services": ["Buy Online, Pick Up In Store", "Free Returns"],
+      "distanceKm": 7.1
+    },
+    {
+      "id": "on-place-vertu",
+      "brand": "oldnavy",
+      "name": "Old Navy Place Vertu",
+      "address": "3131 Boul de la Côte-Vertu",
+      "city": "Saint-Laurent, QC H4R 1Y8",
+      "phone": "(514) 336-3125",
+      "latitude": 45.5033,
+      "longitude": -73.7203,
+      "hours": "Mon–Fri 10am–9pm · Sat–Sun 10am–5pm",
+      "services": ["Buy Online, Pick Up In Store"],
+      "distanceKm": 11.6
+    },
+    {
+      "id": "br-rockland",
+      "brand": "bananarepublic",
+      "name": "Banana Republic Rockland",
+      "address": "2305 Chemin Rockland",
+      "city": "Mont-Royal, QC H3P 3E9",
+      "phone": "(514) 735-2211",
+      "latitude": 45.5163,
+      "longitude": -73.6479,
+      "hours": "Mon–Fri 10am–9pm · Sat 9am–5pm · Sun 10am–5pm",
+      "services": ["Buy Online, Pick Up In Store", "Personal Styling"],
+      "distanceKm": 6.3
+    },
+    {
+      "id": "br-ste-catherine",
+      "brand": "bananarepublic",
+      "name": "Banana Republic Sainte-Catherine",
+      "address": "1150 Rue Sainte-Catherine O",
+      "city": "Montréal, QC H3B 1H7",
+      "phone": "(514) 866-4200",
+      "latitude": 45.5010,
+      "longitude": -73.5710,
+      "hours": "Mon–Sat 10am–9pm · Sun 11am–6pm",
+      "services": ["Free Returns", "Personal Styling"],
+      "distanceKm": 0.6
+    },
+    {
+      "id": "athleta-royalmount",
+      "brand": "athleta",
+      "name": "Athleta Royalmount",
+      "address": "5 Carrefour Royalmount",
+      "city": "Mont-Royal, QC H4P 0A3",
+      "phone": "(514) 341-0100",
+      "latitude": 45.4956,
+      "longitude": -73.6511,
+      "hours": "Mon–Fri 10am–9pm · Sat–Sun 10am–6pm",
+      "services": ["Buy Online, Pick Up In Store", "Community Classes"],
+      "distanceKm": 5.9
+    }
+  ]
+}

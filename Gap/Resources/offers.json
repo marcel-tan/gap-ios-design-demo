@@ -1,0 +1,84 @@
+{
+  "offers": [
+    {
+      "id": "fall25",
+      "brand": "gap",
+      "eyebrow": "Fall event",
+      "title": "25% off your fall outfit",
+      "body": "Sweaters, denim and outerwear. Encore members earn 2× points on the Fall Edit.",
+      "code": "FALL25",
+      "expires": "Ends Oct 5",
+      "isMembersOnly": false
+    },
+    {
+      "id": "yours-30",
+      "brand": "gap",
+      "eyebrow": "Today only",
+      "title": "Extra 30% off your order",
+      "body": "Stack it on top of sale prices. Excludes Gap × collaborations.",
+      "code": "YOURS",
+      "expires": "Ends tonight at 11:59pm ET",
+      "isMembersOnly": false
+    },
+    {
+      "id": "encore-20",
+      "brand": "gap",
+      "eyebrow": "Encore Premier",
+      "title": "Members save an extra 20%",
+      "body": "A thank-you for reaching Premier. Applies to full-price and sale styles.",
+      "code": "ENCORE20",
+      "expires": "Valid through the end of the month",
+      "isMembersOnly": true
+    },
+    {
+      "id": "ship-free",
+      "brand": "gap",
+      "eyebrow": "Shipping",
+      "title": "Free standard shipping on $50+",
+      "body": "No code needed — or use SHIPFREE on any order.",
+      "code": "SHIPFREE",
+      "expires": "Always on for Encore members",
+      "isMembersOnly": false
+    },
+    {
+      "id": "denim-event",
+      "brand": "gap",
+      "eyebrow": "Denim event",
+      "title": "'90s Loose Jeans from $79.95",
+      "body": "The archive-inspired fit everyone's wearing, now in six washes.",
+      "code": null,
+      "expires": "While supplies last",
+      "isMembersOnly": false
+    },
+    {
+      "id": "on-active",
+      "brand": "oldnavy",
+      "eyebrow": "Old Navy Active",
+      "title": "PowerSoft from $19.99",
+      "body": "Buttery-soft leggings, shorts and tops for every workout.",
+      "code": null,
+      "expires": "This week only",
+      "isMembersOnly": false
+    },
+    {
+      "id": "br-cashmere",
+      "brand": "bananarepublic",
+      "eyebrow": "Banana Republic",
+      "title": "40% off sweaters",
+      "body": "Cashmere, merino and chunky cotton knits for the season ahead.",
+      "code": null,
+      "expires": "Ends Sunday",
+      "isMembersOnly": false
+    },
+    {
+      "id": "athleta-legging",
+      "brand": "athleta",
+      "eyebrow": "Athleta",
+      "title": "Buy one legging, get one 50% off",
+      "body": "Salutation, Elation and Transcend — mix and match.",
+      "code": null,
+      "expires": "Limited time",
+      "isMembersOnly": false
+    }
+  ]
+}
